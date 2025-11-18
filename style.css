@@ -1,92 +1,41 @@
-* {
+/* Fondo suave y bonito */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background: #ffe4ec;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
 }
 
-body {
-  background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
+h1, h2 {
+  color: #d12b70;
 }
 
 .container {
-  position: relative;
-  z-index: 2;
-  max-width: 90%;
-}
-
-h1 {
-  font-size: 2.8em;
-  margin-bottom: 0.3em;
-}
-
-h2 {
-  font-size: 2em;
-  margin-bottom: 1.5em;
+  margin-top: 20px;
 }
 
 .text {
-  font-size: 1.3em;
-  margin-top: 1.5em;
-  animation: fadeIn 3s ease-in-out infinite alternate;
+  font-size: 18px;
+  color: #c21866;
 }
 
-/* ---------- SLIDER ---------- */
-.slider {
-  width: 80vw;
-  height: 60vh;
-  max-width: 900px;
-  max-height: 600px;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
-  margin: 0 auto;
-  position: relative;
-}
-
-.slides {
-  display: flex;
-  width: calc(100% * 6); /* duplicamos las imágenes para bucle continuo */
-  height: 100%;
-  animation: slide 26s linear infinite; /* más lento y fluido */
-}
-
-.slides img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Animación del slider: movimiento continuo sin hueco */
-@keyframes slide {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* ---------- CORAZONES ANIMADOS ---------- */
+/* CORAZONES */
 .hearts {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   top: 0;
   left: 0;
-  z-index: 1;
+  pointer-events: none;
 }
 
 .heart {
   position: absolute;
-  bottom: 0;
-  width: 25px;
-  height: 25px;
-  background-color: rgba(255, 0, 102, 0.7);
+  width: 18px;
+  height: 18px;
+  background: #ff9ebe;
   transform: rotate(45deg);
   animation: floatUp linear forwards;
 }
@@ -95,34 +44,107 @@ h2 {
 .heart::after {
   content: "";
   position: absolute;
-  width: 25px;
-  height: 25px;
-  background-color: rgba(255, 0, 102, 0.7);
+  width: 18px;
+  height: 18px;
+  background: #ff9ebe;
   border-radius: 50%;
 }
 
 .heart::before {
-  top: -12px;
+  top: -9px;
   left: 0;
 }
 
 .heart::after {
-  left: -12px;
+  left: -9px;
   top: 0;
 }
 
 @keyframes floatUp {
   from {
-    transform: translateY(0) rotate(45deg);
+    transform: translateY(0) scale(1) rotate(45deg);
     opacity: 1;
   }
   to {
-    transform: translateY(-100vh) rotate(45deg);
+    transform: translateY(-150px) scale(1.3) rotate(45deg);
     opacity: 0;
   }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0.7; }
-  to { opacity: 1; }
+/* SLIDER MEJORADO Y MÁS ANCHO */
+.slider {
+  width: 95%;
+  max-width: 900px;       /* ANCHO GRANDE Y BONITO */
+  overflow: hidden;
+  margin: 25px auto;
+  border-radius: 15px;
+}
+
+/* La tira de imágenes */
+.slides {
+  display: flex;
+  animation: slide 55s linear infinite;
+}
+
+/* FOTOS GRANDES Y BIEN AJUSTADAS */
+.slides img {
+  width: 900px;          /* Se ajusta al slider */
+  height: 600px;         /* Altura bonita */
+  object-fit: cover;     /* Rellena sin deformar */
+  border-radius: 15px;
+}
+
+/* ANIMACIÓN AJUSTADA AL NUEVO TAMAÑO */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-9000px); }
+}
+
+
+/* VIDEO ABAJO */
+video {
+  display: block;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+#textofinal {
+  max-width: 800px;           /* Ancho máximo */
+  margin: 40px auto;          /* Centrado horizontal con espacio arriba/abajo */
+  padding: 25px 30px;         /* Espacio dentro del bloque */
+  
+  background: linear-gradient(135deg, #ffe4ec, #ffc1dc); /* Fondo bonito degradado */
+  border-radius: 20px;        /* Bordes redondeados */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* Sombra sutil */
+  
+  font-size: 18px;
+  line-height: 1.6;
+  color: #900048;
+  text-align: justify;
+  
+  border: 3px solid #ff7fbf;  /* Marco decorativo */
+  position: relative;
+}
+
+/* Opcional: efecto decorativo con pseudo-elementos */
+#textofinal::before,
+#textofinal::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #ff7fbf;
+  border-radius: 50%;
+}
+
+#textofinal::before {
+  top: -10px;
+  left: -10px;
+}
+
+#textofinal::after {
+  bottom: -10px;
+  right: -10px;
 }

@@ -7,37 +7,61 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- MÚSICA DE FONDO -->
+  <audio id="music" autoplay loop>
+    <source src="Ophelia.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    const music = document.getElementById("music");
+    document.body.addEventListener("click", () => {
+      music.play();
+    }, { once: true });
+  </script>
+
   <div class="hearts"></div>
 
   <div class="container">
     <h1>13 de septiembre de 2025</h1>
-    <h2>El mejor día de mi vida 💗
-        Te amo con todo mi corazón gracias por quererme tanto
-    </h2>
+    <h2>El mejor día de mi vida 💗<br>Te amo con todo mi corazón</h2>
 
+    <!-- SLIDER -->
     <div class="slider">
       <div class="slides">
-        <img src="./foto1.jpeg" alt="Foto 1">
-        <img src="./foto2.jpeg" alt="Foto 2">
-        <img src="./foto3.jpeg" alt="Foto 3">
-        <img src="./foto4.jpeg" alt="Foto 4">
-        <img src="./foto5.jpeg" alt="Foto 5">
-        <img src="./foto6.jpeg" alt="Foto 6">
-                <img src="./foto1.jpeg" alt="Foto 1">
-        <img src="./foto2.jpeg" alt="Foto 2">
-        <img src="./foto3.jpeg" alt="Foto 3">
-        <img src="./foto4.jpeg" alt="Foto 4">
-        <img src="./foto5.jpeg" alt="Foto 5">
-        <img src="./foto6.jpeg" alt="Foto 6">
+        <img src="./foto1.jpeg">
+        <img src="./foto2.jpeg">
+        <img src="./foto3.jpeg">
+        <img src="./foto4.jpeg">
+        <img src="./foto5.jpeg">
+        <img src="./foto6.jpeg">
+        <img src="./foto7.jpeg">
+        <img src="./foto8.jpeg">
+        <img src="./foto9.jpeg">
+        <img src="./foto10.jpeg">
+        <img src="./foto11.jpeg">
+        <img src="./foto12.jpeg">
+        <img src="./foto13.jpeg">
+
+        <!-- LOOP SUAVE -->
+        <img src="./foto1.jpeg">
+        <img src="./foto2.jpeg">
+        <img src="./foto3.jpeg">
       </div>
     </div>
 
-    <p class="text">Gracias por hacerme tan feliz 💗 Te amo muchisimo y te quiero mas que tu a mi jijiji</p>
+    <p class="text">Gracias por hacerme tan feliz 💗 Te amo muchísimo</p>
     <h2>C y J</h2>
   </div>
 
+  <!-- VIDEO ABAJO -->
+  <video controls>
+    <source src="video1.mp4" type="video/mp4">
+  </video>
+  <p class="text" id="textofinal">Que esto te sirva como recordatorio cuando te sientas mal, te sientas insuficiente o cualquier malestar que tengas puedas venir a volver a leerlo porque ese será mi mismo pensamiento de ti desde el dia en que nos conocimos bien hasta el dia de mi muerte. Eres lo mas bonito que ha podido llegar a mi vida sin esperarlo y sin nada, de un momento a otro, nos conocimos empezamos a hablar y todo surgió tan perfecto, tan bonito. Al final, todo ha pasado como tenia que pasar. Pienso que esto si o si de una forma u otra acabaría pasando y es que el destino nos juntaria de cualquier forma porque sé a el 100% que eres el amor de mi vida y serás mi mujer y la madre de nuestros hijos. Lo eres todo, te amo te amo te amo. Te amo como nunca podré llegar a expresarlo mi amor.</p>
+
   <script>
-    // Animación de corazones
+    // Corazones animados
     const heartsContainer = document.querySelector('.hearts');
     setInterval(() => {
       const heart = document.createElement('div');
@@ -48,5 +72,6 @@
       setTimeout(() => heart.remove(), 5000);
     }, 400);
   </script>
+
 </body>
 </html>
